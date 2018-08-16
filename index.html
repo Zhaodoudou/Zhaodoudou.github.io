@@ -342,7 +342,7 @@
                 
               
 
-              <time title="创建时间：2018-08-16 14:17:23 / 修改时间：14:43:45" itemprop="dateCreated datePublished" datetime="2018-08-16T14:17:23+08:00">2018-08-16</time>
+              <time title="创建时间：2018-08-16 14:17:23 / 修改时间：17:15:13" itemprop="dateCreated datePublished" datetime="2018-08-16T14:17:23+08:00">2018-08-16</time>
             
 
             
@@ -402,8 +402,166 @@
           
             <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>很多对于linux了解很少，所以从Windows到Linux很不适应。我看网上对于从Windows转到linux方面的的具体介绍很少。从Windows到linux，相当于小说中从旧世界到了一个新世界，怎么能没有新手引导呢，既然都没有什么老司机来带新手，那就由我这个也许算是刚刚及格的司机来带吧。  </p>
 <h2 id="Liunx前世今生"><a href="#Liunx前世今生" class="headerlink" title="Liunx前世今生"></a>Liunx前世今生</h2><p>由于从Unix到linux是一段很长的历史，所以在这里长话短说，有兴趣的同学可以自己去查阅资料，还是嫌长的可以跳过，虽然我觉得了解一下linux的历史还是很有意思的^_^。</p>
-<p>Unix的原型是由Ken Thompson用汇编语言写出来的Unics，后来经过C语言的创造者Dennis Ritchie用C语言重写与编译Unics的核心，正名与发行出Unix的正式版本。1991年，芬兰的赫尔辛基大学的 Linus Torvalds用GNU计划提供的bash规则环境和gcc编译程序等自由软件参考x86架构的Unix Like(类Unix)操作系统Minix，将核心程序代码与 386 紧紧的结合在一起，成功让其在386个人计算机上运行。因为Torvalds放置kernel(核心)的那个FTP网站的目录叫:Linux，从此大家便叫这个Kernel为Linux。有同学已经看出来了，Linux=Linus+Minix，这样是不是容易记住了？^_^</p>
-<p>这就是Linux的由来。所以Linux 其实就是一个操作系统最底层的核心及其提供的核心工具，而常说的Linux系统指的是Linux distribution(Linux 发布商套件)，即Linux Kernel + Softwares + Tools + 可完全安装程序组成的相当完整的操作系统。下面是一些操作系统之间的粗略关系：<br><img src="/./blog/QtSd.jpg" alt="图片1"></p>
+<p>Unix的原型是由Ken Thompson用汇编语言写出来的Unics，后来经过C语言的创造者Dennis Ritchie用C语言重写与编译Unics的核心，正名与发行出Unix的正式版本。1991年，芬兰的赫尔辛基大学的 Linus Torvalds用GNU计划提供的bash规则环境和gcc编译程序等自由软件参考x86架构的Unix Like(类Unix)操作系统Minix，将核心程序代码与 386 紧紧的结合在一起，成功让其在386个人计算机上运行。因为Torvalds放置<strong>kernel(核心)</strong>的那个FTP网站的目录叫:<strong>Linux</strong>，从此大家便叫这个Kernel为Linux。有同学已经看出来了，Linux=Linus+Minix，这样是不是容易记住了？^_^</p>
+<p>这就是Linux的由来。所以<strong>Linux 其实就是一个操作系统最底层的核心及其提供的核心工具</strong>，而常说的<strong>Linux系统指的是Linux distribution(Linux 发布商套件)</strong>，即<strong>Linux Kernel + Softwares + Tools + 可完全安装程序</strong>组成的相当完整的操作系统。下面是一些操作系统之间的粗略关系：</p>
+<p><img src="http://a1.qpic.cn/psb?/V14C3C0N0iXxqE/CKNfvSTcvbDrAb0ie14RKs6roAm1wS*p3SWvc0lnzAc!/m/dDQBAAAAAAAAnull&amp;bo=VQGcAFUBnAADCSw!&amp;rf=photolist&amp;t=5" alt="图片1">  </p>
+<h2 id="Linux和Windows在基础操作中的区别"><a href="#Linux和Windows在基础操作中的区别" class="headerlink" title="Linux和Windows在基础操作中的区别"></a>Linux和Windows在基础操作中的区别</h2><p><strong>root(超级用户)</strong>几乎拥有最高权限，可以做出许多普通用户不能实现的操作。而普通用户要想取得root权限，需要口令(密码)；或者像类Debian(例如Ubuntu)系统中使用的<strong>sudo</strong>命令，允许用户通过安全的方式使用特殊的权限运行程序。所以为了安全起见，一般来说我们尽量通过普通用户进行操作，在需要使用root权限的情况下才在前面加<strong>sudo</strong>。流行的linux发行版，在安装操作系统的时候都可以选择创建普通用户。如果在安装操作系统时没有创建普通用户，安装好以后可以在命令行中创建。  </p>
+<h2 id="手动分区配置"><a href="#手动分区配置" class="headerlink" title="手动分区配置"></a>手动分区配置</h2><p>新手上机一般就先分两个目录，一个”/“根目录，把所有剩余空间都给根目录。一个”swap”目录，大小是内存的1~2倍。</p>
+<h2 id="下载与安装软件"><a href="#下载与安装软件" class="headerlink" title="下载与安装软件"></a>下载与安装软件</h2><p>从Windows转到Linux操作系统的同学，可能第一不适应的就是不知道去哪里下载和安装软件。Windows里面下载软件，要通过搜索官网找到合适的版本下载，虽然看起来全是图形界面很方便，实际上，特别是在国内，很多软件正版就算是免费的，也难免因为某度的混乱，通过某些软件大全之类的网站下载软件，要找到不带病毒的软件比较困难。甚至为了安全着想，有时候要手动对比MD5值，检查证书。</p>
+<p>然而在linux下，几乎不用担心这些，而且几乎所有软件都是开源免费的，选择可靠性好的软件源，通过强大的软件包管理系统，许多时候，只需要知道软件名称，一个命令便可以下载安装。</p>
+<p>更换国内源<br>因为某些原因，国外的官方软件源访问速度很慢，所以可以更换国内的官方镜像源，个人推荐USTC或者Tsinghua这两所学校的镜像源，不仅速度快，而且可靠。选择合适的镜像源，<strong>注意，不同的linux系统版本不一样，一定要选择对应的版本。</strong>然后输入以下命令：</p>
+<blockquote>
+<p>sudo vim /etc/apt/sources.list  </p>
+</blockquote>
+<p>打开软件源列表，注释掉原来的软件源，换成镜像源。如果对于vim操作不懂，可以参考后面的介绍。</p>
+<p>下载与安装<br>在linux系统中，下载软件，往往是通过包管理系统，比如，下载神器vim，通过以下命令即可下载并安装：</p>
+<blockquote>
+<p>sudo apt install vim  </p>
+</blockquote>
+<p>在Ubuntu16.04中都是通过 <code>sudo apt install</code>下载安装软件。怎么样，是不是很方便^_^？</p>
+<p><strong>deb</strong>包<br>deb是Debian软件包格式，文件扩展名为<strong>.deb</strong>，处理这种包的经典程序(命令)是<strong>dpkg</strong>.</p>
+<p>deb包的下载和Windows软件包下载一样，需要去软件官网下载版本对应的deb包，然后通过在deb包的路径下，输入以下命令：</p>
+<blockquote>
+<p>sudo dpkg -i filename.deb  </p>
+</blockquote>
+<p>这里的<strong>filename.deb</strong>中filename是指文件名，注意，不要真的输入”filename”，请根据具体文件名输入。此外需要说明，这里的<code>dpkg -i</code>就是安装deb包的意思。更多有关dpkg的命令请自行查阅。</p>
+<p>卸载软件<br>比如要卸载vim，需要两步即可:</p>
+<blockquote>
+<p>sudo apt remove vim<br>sudo apt autoremove</p>
+</blockquote>
+<p>其他软件卸载几乎都可以通过这两步实现。</p>
+<p>apt<br>与ubuntu16.04之前的版本使用<code>apt-get</code>不同，这一版本采用更友好的apt包管理。以下是<code>apt --help</code>的具体说明:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">命令行软件包管理器 apt 提供软件包搜索，管理和信息查询等功能。 它提供的功能与其他 APT 工具相同（像 apt-get 和 apt-cache）， 但是默认情况下被设置得更适合交互。</span><br><span class="line"></span><br><span class="line">常用命令： list - 根据名称列出软件包 search - 搜索软件包描述 show - 显示软件包细节 install - 安装软件包 remove - 移除软件包 autoremove - 卸载所有自动安装且不再使用的软件包 update - 更新可用软件包列表 upgrade - 通过 安装/升级 软件来更新系统 full-upgrade - 通过 卸载/安装/升级 来更新系统 edit-sources - 编辑软件源信息文件</span><br></pre></td></tr></table></figure>
+<h2 id="路径"><a href="#路径" class="headerlink" title="路径"></a>路径</h2><p>在linux中，路径这一概念很重要。比如，要安装一个deb包，需要进入下载的deb包的目录才能使用<code>dpkg -i</code>安装，或者使用相对路径，比如我现在提示字符为<strong>xxx@ubuntuwork:~$</strong> ，而deb包在<strong>~/Downloads</strong>目录下，在这样就可以通过命令<code>sudo dpkg -i Downloads/filename.deb</code>安装。所以，在操作文件的时候需要注意当前路径！</p>
+<p>切换路径<br>使用<strong>cd</strong>命令，比如，现在提示符为<strong>xxx@ubuntuwork:~$</strong>，我要进入Documents目录，使用命令：</p>
+<blockquote>
+<p>cd Documents/  </p>
+</blockquote>
+<p>如果进入了Documents目录，要上级目录，输入：</p>
+<blockquote>
+<p>cd ..  </p>
+</blockquote>
+<p>返回上级目录，注意，两点和cd之间有一个空格。</p>
+<h2 id="查看文件内容"><a href="#查看文件内容" class="headerlink" title="查看文件内容"></a>查看文件内容</h2><p>使用<strong>cat</strong>命令查看文件内容，也可以使用vim查看。比如:</p>
+<blockquote>
+<p>cat test.conf  </p>
+</blockquote>
+<p>在Windows下，不知道文件或文件夹所在目录的情况下，查找文件有everything这样的软件，那么在linux下，如何在不知道文件目录的情况下找到文件呢？这里介绍三个命令。</p>
+<p>whereis<br>whereis命令只能用于程序名的搜索，而且只搜索二进制文件（参数-b）、man说明文件（参数-m）和源代码文件（参数-s）。如果省略参数，则返回所有信息。比如：</p>
+<blockquote>
+<p>whereis vim  </p>
+</blockquote>
+<p>更多用法请使用<code>whereis --help</code>命令。  </p>
+<p><strong>find</strong>  </p>
+<p>find命令最为强大，可以找到任何你想找的文件。<br>find的使用实例：</p>
+<blockquote>
+<p>find .-name ‘my*’  </p>
+</blockquote>
+<p>搜索当前目录（含子目录，以下同）中，所有文件名以my开头的文件。虽然find很强大，但是由于搜索很慢，所以一般情况下在其他搜索命令找不到文件的时候才使用它。更多用法请使用 <code>find --help</code>命令。  </p>
+<p><strong>locate</strong>  </p>
+<p>ocate其实是”find -name”的另一种写法，但是要比后者快得多，原因在于它不搜索具体目录，而是搜索一个数据库。这个数据库中含有本地所有文件信息。Linux系统自动创建这个数据库，并且每天自动更新一次，所以使用locate命令查不到最新变动过的文件。为了避免这种情况，可以在使用locate之前，先使用<strong>updatedb</strong>命令，手动更新数据库。locate的使用实<br>例：</p>
+<blockquote>
+<p>locate vim  </p>
+</blockquote>
+<p>搜索所有相对路径或者名称中含’vim’的文件。更多用法请使用 <code>locate --help</code>命令。</p>
+<h2 id="移动与复制文件"><a href="#移动与复制文件" class="headerlink" title="移动与复制文件"></a>移动与复制文件</h2><p>在linux桌面版中移动和复制文件与Windows相同。但是既然有同学提出了，我还是说一下命令行下的操作。</p>
+<p><strong>mv</strong></p>
+<p>mv命令是move的缩写，可以用来移动文件或者将文件改名。视mv命令中第二个参数类型的不同（是目标文件还是目标目录），mv命令将文件重命名或将其移至一个新的目录中。当第二个参数类型是文件时，mv命令完成文件重命名，当第二个参数是已存在的目录名称时，mv命令将源文件移至目标目录中。</p>
+<ul>
+<li>文件改名</li>
+</ul>
+<blockquote>
+<p>mv file1.txt file2.log</p>
+</blockquote>
+<p>将file1.txt改名为file2.txt。</p>
+<ul>
+<li>移动文件</li>
+</ul>
+<blockquote>
+<p>mv file3.txt /etc/bin  </p>
+</blockquote>
+<p>将文件file3.txt移动到/etc/bin目录下。更多用法请使用 <code>mv --help</code>命令。</p>
+<p><strong>cp</strong></p>
+<p>cp，顾名思义是用来复制文件或者目录的命令。</p>
+<ul>
+<li>复制单个文件到目标目录：</li>
+</ul>
+<blockquote>
+<p>cp filename4.txt /etc/test</p>
+</blockquote>
+<p>复制文件filename4.txt到目录/etc/test下面。</p>
+<ul>
+<li>复制整个目录到另一个目录下：</li>
+</ul>
+<blockquote>
+<p>cp /etc/test /etc/bin  </p>
+</blockquote>
+<p>复制/etc/test整个目录到/etc/bin目录下。</p>
+<p><strong>快捷键</strong>  </p>
+<p>在ubuntu16.04中：</p>
+<ul>
+<li>复制的快捷键：<strong>ctrl+shift+c</strong></li>
+<li>粘贴的快捷键为：<strong>ctrl+shift+v</strong></li>
+<li>剪切的快捷键为:<strong>ctrl+shift+x</strong></li>
+<li>自动补全：<strong>Tab</strong></li>
+</ul>
+<p><strong>注意</strong>：这里的自动补全指目录或者文件名补全，比如我用 cd 命令打开Downloads目录，一般来说只需要输入”Dow”再按tab即可补全Downloads，这个命令特别方便，需要多多使用。</p>
+<p>其他distribution请自行查阅。</p>
+<h2 id="文件权限"><a href="#文件权限" class="headerlink" title="文件权限"></a>文件权限</h2><p>有时候我们执行一个文件的时候会遇到权限不够或者无法执行的情况。这种情况下可以查看文件权限。以我自己的电脑为例：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">xxxx@ubuntuwork:~$ ll test.conf diffFiles </span><br><span class="line">lrwxrwxrwx 1 threebody threebody  46 7月   8 13:33 diffFiles -&gt; /home/threebody/Oxygen XML Editor 19/diffFiles*</span><br><span class="line">-rw-rw-r-- 1 threebody threebody 110 7月  28 10:58 test.conf</span><br></pre></td></tr></table></figure>
+<p><strong>ll</strong> 命令列出文件所有信息。这里可以看到第一个文件有三组”rwx”，第二个文件也是分了三组，只是在第一个文件某些位置上的w/x用’’-‘’代替了。这三组”rwx”，分别对应文件所有者的权限，文件所在群组的权限，其他人的权限。现在暂时关心文件所有者的权限。</p>
+<p><strong>“r”</strong>指可读，<strong>“w”</strong>指可写，<strong>“x”</strong>指可执行。前面两个好理解，最后这个可执行指的是什么呢？其实就是指一个程序，一个脚本能不能运行。那么第一个文件最前面的”l”又是指什么呢？最前面的指文件类型。这里的<strong>“l”</strong>指链接文件，<strong>“-”</strong>指文件。</p>
+<p>那么，如何修改这些权限呢？</p>
+<p>这就要用到<strong>chmod</strong>这个命令。可以使用数字来代表各个权限，<strong>“rwx”中，r=4,w=2,x=1</strong>。如果对test.conf修改，使得其具有以下权限：</p>
+<ul>
+<li>owner = rwx = 4+2+1 = 7</li>
+<li>group = rwx = 4+2+1 = 7</li>
+<li>others= — = 0+0+0 = 0</li>
+</ul>
+<p>输入命令：</p>
+<blockquote>
+<p>chmod 770 test.conf  </p>
+</blockquote>
+<p>其他的同理。要三组都加上某种权限或者减去某种权限，可以用+号或-号。</p>
+<p>例如：</p>
+<blockquote>
+<p>chomod a=x test.conf<br>三组均加上可执行权限。</p>
+</blockquote>
+<h2 id="更新"><a href="#更新" class="headerlink" title="更新"></a>更新</h2><p>首先应该输入以下命令：</p>
+<blockquote>
+<p>sudo apt update  </p>
+</blockquote>
+<p>然后再输入以下命令：</p>
+<blockquote>
+<p>sudo apt upgrade</p>
+</blockquote>
+<p>update:更新可用软件包及其版本的列表，但不会安装或升级任何软件包。</p>
+<p>upgrade:实际上安装了更新版本的包。更新列表后，软件包管理器知道了已安装的软件的可用更新。通过这个命令更新软件。</p>
+<p>查看历史命令<br>查看历史命令使用命令<strong>history</strong>。实例：</p>
+<blockquote>
+<p>history 100</p>
+</blockquote>
+<p>查看最近的100个命令。</p>
+<h2 id="基础命令"><a href="#基础命令" class="headerlink" title="基础命令"></a>基础命令</h2><p><strong>VIM</strong></p>
+<p>vim号称linux下最强大的编辑器。所以相关命令很多。在这里我只介绍几个常用命令。只限于正常打开，修改并关闭文件。</p>
+<p>用vim打开文件输入命令:</p>
+<blockquote>
+<p>vim file</p>
+</blockquote>
+<p><code>打开文件以后按 &quot;i&quot; 便可以开始编辑，编辑完成以后按esc键退出编辑模式，再按 : 键，输入wq保存并退出。</code></p>
+<p><strong>“:” 键后面输入的一些命令</strong>：</p>
+<blockquote>
+<p>wq:保存并退出</p>
+</blockquote>
+<blockquote>
+<p>q!:强制退出，不保存。</p>
+</blockquote>
+<blockquote>
+<p>q:退出(不做修改的情况下使用)</p>
+</blockquote>
+<h2 id="尾声"><a href="#尾声" class="headerlink" title="尾声"></a>尾声</h2><p>没有写过这么长的技术文章，不过这一篇文章也帮我梳理了一下这个暑假学过的linux知识。就linux而言，确实有很多东西值得写，值得去学。这个暑假一直用linux做的开发，确确实实的感受到了linux的方便，现在已经很少用windows了。</p>
+<p>就这篇文章而言，只是涉及了一些基本操作，对于刚刚从Windows转入Linux的同学来说可能刚刚够用。至于更深入的学习，我还是建议同学们多去看书+实践。《鸟哥的Linux私房菜》是一本很好的书，讲的确实很细，虽然有时候有点啰嗦，但是如果耐心看下去，收获会很大。至于以后我是否会更新Linux相关的内容，看情况吧。</p>
+<p>学习一门新的知识，从懵懵懂懂到明白理解，这是一个循序渐进的过程，与君共勉。</p>
 
           
         
