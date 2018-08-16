@@ -342,7 +342,7 @@
                 
               
 
-              <time title="创建时间：2018-08-16 14:17:23 / 修改时间：17:26:07" itemprop="dateCreated datePublished" datetime="2018-08-16T14:17:23+08:00">2018-08-16</time>
+              <time title="创建时间：2018-08-16 14:17:23 / 修改时间：17:33:23" itemprop="dateCreated datePublished" datetime="2018-08-16T14:17:23+08:00">2018-08-16</time>
             
 
             
@@ -509,7 +509,7 @@
 <p>其他distribution请自行查阅。</p>
 <h2 id="文件权限"><a href="#文件权限" class="headerlink" title="文件权限"></a>文件权限</h2><p>有时候我们执行一个文件的时候会遇到权限不够或者无法执行的情况。这种情况下可以查看文件权限。以我自己的电脑为例：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">xxxx@ubuntuwork:~$ ll test.conf diffFiles </span><br><span class="line">lrwxrwxrwx 1 threebody threebody  46 7月   8 13:33 diffFiles -&gt; /home/threebody/Oxygen XML Editor 19/diffFiles*</span><br><span class="line">-rw-rw-r-- 1 threebody threebody 110 7月  28 10:58 test.conf</span><br></pre></td></tr></table></figure>
-<p><strong>小写的L,ll</strong> 命令列出文件所有信息。这里可以看到第一个文件有三组”rwx”，第二个文件也是分了三组，只是在第一个文件某些位置上的w/x用’’-‘’代替了。这三组”rwx”，分别对应文件所有者的权限，文件所在群组的权限，其他人的权限。现在暂时关心文件所有者的权限。</p>
+<p><strong>两个小写的L,ll</strong> 命令列出文件所有信息。这里可以看到第一个文件有三组”rwx”，第二个文件也是分了三组，只是在第一个文件某些位置上的w/x用’’-‘’代替了。这三组”rwx”，分别对应文件所有者的权限，文件所在群组的权限，其他人的权限。现在暂时关心文件所有者的权限。</p>
 <p><strong>“r”</strong>指可读，<strong>“w”</strong>指可写，<strong>“x”</strong>指可执行。前面两个好理解，最后这个可执行指的是什么呢？其实就是指一个程序，一个脚本能不能运行。那么第一个文件最前面的”l”又是指什么呢？最前面的指文件类型。这里的<strong>“l”</strong>指链接文件，<strong>“-”</strong>指文件。</p>
 <p>那么，如何修改这些权限呢？</p>
 <p>这就要用到<strong>chmod</strong>这个命令。可以使用数字来代表各个权限，<strong>“rwx”中，r=4,w=2,x=1</strong>。如果对test.conf修改，使得其具有以下权限：</p>
